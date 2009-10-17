@@ -13,4 +13,4 @@ requires:
   parent: 0
 resources:
   repository: http://github.com/melo/browser-open
-version: 0.01
+version: 0.02

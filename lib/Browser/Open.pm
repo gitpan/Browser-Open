@@ -1,5 +1,5 @@
 package Browser::Open;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 
@@ -17,7 +17,16 @@ my @known_commands = (
   [ 'cygwin', 'start'],
   [ 'MSWin32', 'start'],
   [ 'linux', 'xdg-open'],
+  [ 'linux', 'htmlview'],
+#  [ 'linux', 'gnome-open'], ## Gnome
+#  [ 'linux', 'kfmclient'], ## KDE
+#  [ 'linux', 'exo-open'],  ## XFCE
   [ 'linux', 'firefox'],
+  [ 'linux', 'seamonkey'],
+  [ 'linux', 'opera'],
+  [ 'linux', 'mozilla'],
+  [ 'linux', 'netscape'],
+  [ 'linux', 'galeon'],
   [ '*', 'open'],
   [ '*', 'start'],
 );
@@ -70,7 +79,7 @@ Browser::Open - open a browser in a given URL
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
