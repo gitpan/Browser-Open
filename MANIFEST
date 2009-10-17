@@ -1,0 +1,15 @@
+Changes
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+dist.ini
+lib/Browser/Open.pm
+t/00-load.t
+t/01-basic.t
+t/author-10-open.t
+t/release-meta-yaml.t
+t/release-pod-coverage.t
+t/release-pod-syntax.t
+t/smoke-20-discover.t

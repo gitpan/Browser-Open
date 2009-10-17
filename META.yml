@@ -1,0 +1,16 @@
+---
+abstract: 'open a browser in a given URL'
+author:
+  - 'Pedro Melo <melo@cpan.org>'
+generated_by: 'Dist::Zilla version 1.092830'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Browser-Open
+requires:
+  Test::More: 0.92
+  parent: 0
+resources:
+  repository: http://github.com/melo/browser-open
+version: 0.01
