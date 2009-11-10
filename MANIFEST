@@ -6,6 +6,8 @@ Makefile.PL
 README
 dist.ini
 lib/Browser/Open.pm
+lib/Browser/pod2htmd.tmp
+lib/Browser/pod2htmi.tmp
 t/00-load.t
 t/01-basic.t
 t/author-10-open.t
