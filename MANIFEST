@@ -1,17 +1,14 @@
 Changes
-LICENSE
-MANIFEST
-META.yml
-Makefile.PL
-README
 dist.ini
 lib/Browser/Open.pm
-lib/Browser/pod2htmd.tmp
-lib/Browser/pod2htmi.tmp
+Makefile.PL
+MANIFEST			This list of files
+README
 t/00-load.t
 t/01-basic.t
-t/author-10-open.t
-t/release-meta-yaml.t
-t/release-pod-coverage.t
-t/release-pod-syntax.t
-t/smoke-20-discover.t
+xt/author/10-open.t
+xt/release-meta-yaml.t
+xt/release-pod-coverage.t
+xt/release-pod-syntax.t
+xt/smoke/20-discover.t
+META.yml                                 Module meta-data (added by MakeMaker)

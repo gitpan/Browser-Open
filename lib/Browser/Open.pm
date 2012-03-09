@@ -1,5 +1,5 @@
 package Browser::Open;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 
@@ -20,9 +20,10 @@ my @known_commands = (
   ['', $ENV{BROWSER}],
   ['darwin',  '/usr/bin/open', 1],
   ['cygwin',  'start'],
-  ['MSWin32', 'start'],
+  ['MSWin32', 'start', undef, 1],
   ['solaris', 'xdg-open'],
   ['solaris', 'firefox'],
+  ['linux',   'sensible-browser'],
   ['linux',   'xdg-open'],
   ['linux',   'x-www-browser'],
   ['linux',   'www-browser'],
@@ -41,6 +42,20 @@ my @known_commands = (
   ['linux',   'opera'],
   ['linux',   'w3m'],
   ['linux',   'lynx'],
+  ['freebsd', 'xdg-open'],
+  ['freebsd', 'gnome-open'],
+  ['freebsd', 'gnome-moz-remote'],
+  ['freebsd', 'kfmclient'],
+  ['freebsd', 'exo-open'],
+  ['freebsd', 'firefox'],
+  ['freebsd', 'seamonkey'],
+  ['freebsd', 'opera'],
+  ['freebsd', 'mozilla'],
+  ['freebsd', 'netscape'],
+  ['freebsd', 'galeon'],
+  ['freebsd', 'opera'],
+  ['freebsd', 'w3m'],
+  ['freebsd', 'lynx'],
   ['',        'open'],
   ['',        'start'],
 );
@@ -72,11 +87,13 @@ sub _check_all_cmds {
   my ($filter) = @_;
 
   foreach my $spec (@known_commands) {
-    my ($osname, $cmd, $exact) = @$spec;
+    my ($osname, $cmd, $exact, $no_search) = @$spec;
     next unless $cmd;
     next if $osname && $filter && $osname ne $filter;
+    next if $no_search && !$filter && $osname ne $^O;
 
     return $cmd if $exact && -x $cmd;
+    return $cmd if $no_search;
     $cmd = _search_in_path($cmd);
     return $cmd if $cmd;
   }
